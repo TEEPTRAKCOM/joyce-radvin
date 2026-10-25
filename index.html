@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce & Radvin — 3 & 4 Septembre 2027 · Cassis</title>
+  <meta name="description" content="Rejoignez Joyce & Radvin pour une célébration inoubliable au Domaine de Canaille, Cassis — 3 & 4 Septembre 2027.">
+  <meta property="og:title" content="Joyce & Radvin — Célébration à Cassis">
+  <meta property="og:description" content="Un week-end de fête entre mer et vignes, au cœur de la Provence.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💛</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       CSS CUSTOM PROPERTIES
+    ═══════════════════════════════════════ */
+    :root {
+      --navy: #0B3D5B;
+      --navy-deep: #061E2F;
+      --gold: #E8B86D;
+      --gold-muted: rgba(232, 184, 109, 0.15);
+      --gold-faint: rgba(232, 184, 109, 0.08);
+      --antique: #C49A5C;
+      --cream: #F5EDE3;
+      --white: #FDFBF7;
+      --text-light: rgba(253, 251, 247, 0.85);
+      --text-light-muted: rgba(253, 251, 247, 0.6);
+      --text-dark: #1a1a1a;
+      --text-dark-muted: #5a5a5a;
+      --spotify: #1DB954;
+      --font-script: 'Great Vibes', cursive;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --section-padding: clamp(80px, 12vw, 140px);
+      --container: min(1100px, 90vw);
+    }
+
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════ */
+    .script { font-family: var(--font-script); font-weight: 400; }
+    .serif { font-family: var(--font-serif); }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    /* ═══════════════════════════════════════
+       DARK & LIGHT SECTIONS
+    ═══════════════════════════════════════ */
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .section-dark .eyebrow { color: var(--gold); }
+    .section-dark .section-sub { color: var(--text-light); }
+
+    .section-light {
+      background: var(--white);
+      color: var(--text-dark);
+    }
+    .section-light .eyebrow { color: var(--antique); }
+    .section-light .section-sub { color: var(--text-dark-muted); }
+
+    .section-cream {
+      background: var(--cream);
+      color: var(--text-dark);
+    }
+    .section-cream .eyebrow { color: var(--antique); }
+
+    section {
+      padding: var(--section-padding) 0;
+    }
+
+    /* ═══════════════════════════════════════
+       SCROLL ANIMATIONS
+    ═══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(6, 30, 47, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0.8rem 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(253, 251, 247, 0.7);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Mobile menu */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75vw;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--navy-deep);
+        flex-direction: column;
+        padding: 5rem 2.5rem 2.5rem;
+        gap: 1.5rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -4px 0 30px rgba(0,0,0,0.3);
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 0.95rem; }
+      .nav-toggle { display: flex; }
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(11, 61, 91, 0.6) 0%, var(--navy-deep) 70%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    /* Decorative background pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(232, 184, 109, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(232, 184, 109, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(232, 184, 109, 0.05) 0%, transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-ornament {
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5em;
+      opacity: 0.6;
+    }
+
+    .hero-names {
+      font-family: var(--font-script);
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      color: var(--white);
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-names .amp {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.5em;
+      vertical-align: middle;
+      margin: 0 0.15em;
+      color: var(--gold);
+    }
+
+    .hero-label {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2rem;
+      font-weight: 500;
+    }
+
+    .hero-date {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-light);
+      margin-top: 0.75rem;
+      font-weight: 400;
+    }
+
+    .hero-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem auto 0;
+      opacity: 0.4;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.5;
+      animation: scrollBounce 2s infinite;
+    }
+    .scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .scroll-hint svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ═══════════════════════════════════════
+       COUNTDOWN
+    ═══════════════════════════════════════ */
+    .countdown-section {
+      background: var(--navy-deep);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 4vw, 3rem);
+    }
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .countdown-number {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      min-width: 2ch;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .countdown-sep {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: rgba(232, 184, 109, 0.3);
+      align-self: flex-start;
+      margin-top: 0.3rem;
+    }
+
+    /* ═══════════════════════════════════════
+       ORNAMENT DIVIDER
+    ═══════════════════════════════════════ */
+    .ornament {
+      text-align: center;
+      padding: 0.5rem 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: 0.4;
+      letter-spacing: 0.5em;
+    }
+
+    /* ═══════════════════════════════════════
+       CASSIS INTRO
+    ═══════════════════════════════════════ */
+    .cassis-section {
+      text-align: center;
+    }
+    .cassis-section .section-sub {
+      margin: 0 auto 2.5rem;
+    }
+    .cassis-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .cassis-card {
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-muted);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cassis-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(232, 184, 109, 0.1);
+    }
+    .cassis-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+    .cassis-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-light);
+    }
+    .cassis-card .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       NOTRE HISTOIRE (TIMELINE)
+    ═══════════════════════════════════════ */
+    .story-section {
+      text-align: center;
+    }
+    .story-section .section-sub {
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 3rem auto 0;
+      text-align: left;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 56px;
+      padding-bottom: 2.5rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: 14px;
+      top: 4px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gold);
+    }
+    .timeline-item.highlight .timeline-dot {
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(232, 184, 109, 0.4);
+    }
+    .timeline-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--antique);
+      margin-bottom: 0.3rem;
+    }
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text-dark-muted);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       PROGRAMME
+    ═══════════════════════════════════════ */
+    .programme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .programme-card {
+      background: rgba(253, 251, 247, 0.05);
+      border: 1px solid rgba(232, 184, 109, 0.15);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .programme-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--antique));
+    }
+    .programme-day {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .programme-date {
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .programme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid rgba(232, 184, 109, 0.12);
+      padding-top: 1.5rem;
+    }
+    .programme-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .programme-time {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 50px;
+      letter-spacing: 0.02em;
+    }
+    .programme-dot {
+      color: rgba(232, 184, 109, 0.4);
+      font-size: 0.6rem;
+    }
+    .programme-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════
+       LIEU / VIDEO
+    ═══════════════════════════════════════ */
+    .lieu-section {
+      text-align: center;
+    }
+    .lieu-section .section-sub {
+      margin: 0 auto 2.5rem;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: var(--navy);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--text-light-muted);
+      gap: 1rem;
+    }
+    .video-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.5;
+    }
+    .lieu-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      color: var(--antique);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .lieu-link:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       NOS PROCHES
+    ═══════════════════════════════════════ */
+    .team-section { text-align: center; }
+    .team-group-title {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 3rem 0 1.5rem;
+    }
+    .team-group-title:first-of-type { margin-top: 2.5rem; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .team-card {
+      background: rgba(232, 184, 109, 0.06);
+      border: 1px solid rgba(232, 184, 109, 0.12);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(232, 184, 109, 0.08);
+    }
+    .team-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(232, 184, 109, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .team-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .team-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(232, 184, 109, 0.1);
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    .team-desc {
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       DRESS CODE
+    ═══════════════════════════════════════ */
+    .dresscode-section { text-align: center; }
+    .dresscode-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dresscode-card {
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-muted);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: left;
+    }
+    .dresscode-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .dresscode-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-dark-muted);
+    }
+    .color-swatches {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      position: relative;
+      border: 2px solid #ddd;
+    }
+    .swatch::after {
+      content: '✕';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c0392b;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .swatch-white { background: #fff; }
+    .swatch-cream { background: #FFFDD0; }
+    .swatch-black { background: #111; border-color: #333; }
+    .swatch-black::after { color: #e74c3c; }
+
+    /* ═══════════════════════════════════════
+       TRANSPORT & SÉJOUR
+    ═══════════════════════════════════════ */
+    .travel-section { text-align: center; }
+    .travel-section .section-sub { margin: 0 auto; }
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .travel-card {
+      background: rgba(253, 251, 247, 0.05);
+      border: 1px solid rgba(232, 184, 109, 0.12);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: left;
+    }
+    .travel-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .travel-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .travel-card .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .accommodation-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--white);
+      margin: 4rem 0 2rem;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      transition: background 0.3s, color 0.3s;
+      margin-top: 2rem;
+    }
+    .btn-gold:hover {
+      background: var(--gold);
+      color: var(--navy-deep);
+    }
+
+    /* ═══════════════════════════════════════
+       PLAYLIST
+    ═══════════════════════════════════════ */
+    .playlist-section { text-align: center; }
+    .playlist-section .section-sub { margin: 0 auto 2rem; }
+    .spotify-embed {
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .btn-spotify {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: var(--spotify);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      transition: opacity 0.3s, transform 0.3s;
+      margin-top: 1.5rem;
+    }
+    .btn-spotify:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════
+       CADEAUX
+    ═══════════════════════════════════════ */
+    .cadeaux-section { text-align: center; }
+    .cadeaux-section .section-sub { margin: 0 auto; }
+    .cadeaux-box {
+      max-width: 600px;
+      margin: 2.5rem auto 0;
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-muted);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+    .cadeaux-box p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-dark-muted);
+    }
+    .cadeaux-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       RSVP
+    ═══════════════════════════════════════ */
+    .rsvp-section { text-align: center; }
+    .rsvp-section .section-sub { margin: 0 auto 2.5rem; }
+    .rsvp-form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light-muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(253, 251, 247, 0.06);
+      border: 1px solid rgba(232, 184, 109, 0.2);
+      border-radius: 10px;
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-light-muted);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group select option {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--gold), var(--antique));
+      color: var(--navy-deep);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .btn-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--navy-deep);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .footer-names {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .footer-meta {
+      font-size: 0.8rem;
+      color: var(--text-light-muted);
+      letter-spacing: 0.08em;
+    }
+    .footer-heart {
+      margin: 1.5rem 0;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+    .footer-bottom {
+      font-size: 0.7rem;
+      color: var(--text-light-muted);
+      opacity: 0.5;
+    }
+
+    /* ═══════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════ */
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold); }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+
+    /* Map embed */
+    .map-wrapper {
+      width: 100%;
+      max-width: 800px;
+      margin: 2.5rem auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE REFINEMENTS
+    ═══════════════════════════════════════ */
+    @media (max-width: 640px) {
+      .programme-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .cassis-cards { grid-template-columns: 1fr; }
+      .dresscode-cards { grid-template-columns: 1fr; }
+      .travel-grid { grid-template-columns: 1fr; }
+      .hero-names { font-size: clamp(2.8rem, 12vw, 4rem); }
+      section { padding: clamp(60px, 10vw, 100px) 0; }
+      .timeline::before { left: 16px; }
+      .timeline-item { padding-left: 46px; }
+      .timeline-dot { left: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">J &amp; R</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#story">Notre Histoire</a></li>
+        <li><a href="#weekend">Programme</a></li>
+        <li><a href="#team">Nos Proches</a></li>
+        <li><a href="#dresscode">Dress Code</a></li>
+        <li><a href="#travel">Accès &amp; Séjour</a></li>
+        <li><a href="#playlist">Playlist</a></li>
+        <li><a href="#cadeaux">Cadeaux</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header class="hero" id="home">
+    <div class="hero-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="hero-label">On célèbre l'amour</p>
+    <h1 class="hero-names">Joyce <span class="amp">&amp;</span> Radvin</h1>
+    <p class="hero-date">3 &amp; 4 Septembre 2027 · Cassis, Sud de la France</p>
+    <div class="hero-line"></div>
+    <div class="scroll-hint">
+      <span>Découvrir</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ═══════════════ COUNTDOWN ═══════════════ -->
+  <div class="countdown-section">
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">---</span>
+        <span class="countdown-label">Jours</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Heures</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-mins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-secs">--</span>
+        <span class="countdown-label">Secondes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CASSIS INTRO ═══════════════ -->
+  <section class="section-dark cassis-section" id="cassis">
+    <div class="container">
+      <p class="eyebrow reveal">Cassis, Provence</p>
+      <h2 class="section-heading reveal" style="color: var(--white);">Entre mer et vignes</h2>
+      <p class="section-sub reveal" style="color: var(--text-light);">
+        Niché entre falaises ocre et Méditerranée, Cassis est notre coup de cœur. C'est ici, au Domaine de Canaille, que nous avons choisi de célébrer avec ceux qu'on aime.
+      </p>
+      <div class="cassis-cards">
+        <div class="cassis-card reveal reveal-delay-1">
+          <div class="card-icon">🏛️</div>
+          <h3>Domaine de Canaille</h3>
+          <p>Un domaine viticole d'exception surplombant la mer, entre vignes et pins parasols. L'écrin idéal pour un week-end de fête entre amis et famille.</p>
+        </div>
+        <div class="cassis-card reveal reveal-delay-2">
+          <div class="card-icon">🌊</div>
+          <h3>Les Calanques</h3>
+          <p>Eaux turquoise et criques secrètes — offrez-vous une excursion en bateau ou une randonnée le long des sentiers du Parc national.</p>
+        </div>
+        <div class="cassis-card reveal reveal-delay-3">
+          <div class="card-icon">⛰️</div>
+          <h3>Cap Canaille</h3>
+          <p>La plus haute falaise maritime d'Europe : des panoramas vertigineux sur la côte, les vignobles et la Grande Bleue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ NOTRE HISTOIRE ═══════════════ -->
+  <section class="section-light story-section" id="story">
+    <div class="container">
+      <p class="eyebrow reveal">Notre Histoire</p>
+      <h2 class="section-heading reveal">D'une rencontre à une promesse</h2>
+      <p class="section-sub reveal">
+        Tout a commencé par un regard, puis une conversation qui n'a jamais vraiment pris fin…
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Octobre 2022</p>
+          <h3 class="timeline-title">La rencontre</h3>
+          <p class="timeline-text">Radvin rejoint Digidome, une entreprise parisienne. C'est là, au détour d'un couloir, qu'il croise Joyce pour la première fois. Un sourire, un café, une évidence.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2023</p>
+          <h3 class="timeline-title">Les premiers voyages</h3>
+          <p class="timeline-text">Très vite, l'aventure les emporte : New York, le Canada, puis une ribambelle de pays européens. Chaque destination renforce cette certitude : ils sont faits pour explorer le monde ensemble.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2024</p>
+          <h3 class="timeline-title">Les épreuves et les victoires</h3>
+          <p class="timeline-text">La vie n'est pas un long fleuve tranquille. Ensemble, ils traversent des moments difficiles, célèbrent de belles réussites et apprennent à se construire à deux — dans les hauts comme dans les bas.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2025</p>
+          <h3 class="timeline-title">Notre chez-nous</h3>
+          <p class="timeline-text">Une nouvelle étape se dessine : l'achat de leur premier appartement. Un lieu bien à eux, entre projets de déco et soirées sur le canapé.</p>
+        </div>
+        <div class="timeline-item highlight reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Décembre 2025</p>
+          <h3 class="timeline-title">La demande à l'Île Maurice</h3>
+          <p class="timeline-text">Sous le soleil de l'Île Maurice, Radvin met un genou à terre. Elle dit oui. Le reste de l'histoire, c'est vous qui allez l'écrire avec nous — le 3 septembre 2027, à Cassis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROGRAMME ═══════════════ -->
+  <section class="section-dark" id="weekend">
+    <div class="container text-center">
+      <p class="eyebrow reveal">Le Programme</p>
+      <h2 class="section-heading reveal" style="color: var(--white);">Un week-end de fête</h2>
+      <p class="section-sub reveal" style="margin: 0 auto; color: var(--text-light);">
+        Deux jours de célébration au Domaine de Canaille — entre cérémonie, danse et farniente au bord de la piscine.
+      </p>
+
+      <div class="programme-grid">
+        <!-- Vendredi -->
+        <div class="programme-card reveal reveal-delay-1">
+          <p class="programme-day">Vendredi</p>
+          <p class="programme-date">3 Septembre 2027</p>
+          <div class="programme-list">
+            <div class="programme-item">
+              <span class="programme-time">17h00</span>
+              <span class="programme-dot">●</span>
+              <span class="programme-desc">Arrivée des invités</span>
+            </div>
+            <div class="programme-item">
+              <span class="programme-time">18h00</span>
+              <span class="programme-dot">●</span>
+              <span class="programme-desc">Cérémonie</span>
+            </div>
+            <div class="programme-item">
+              <span class="programme-time">20h00</span>
+              <span class="programme-dot">●</span>
+              <span class="programme-desc">Cocktail dînatoire</span>
+            </div>
+            <div class="programme-item">
+              <span class="programme-time">02h00</span>
+              <span class="programme-dot">●</span>
+              <span class="programme-desc">After Party · Club Canaille 🎶</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samedi -->
+        <div class="programme-card reveal reveal-delay-2">
+          <p class="programme-day">Samedi</p>
+          <p class="programme-date">4 Septembre 2027</p>
+          <div class="programme-list">
+            <div class="programme-item">
+              <span class="programme-time">13h–17h</span>
+              <span class="programme-dot">●</span>
+              <span class="programme-desc">Brunch &amp; Pool Party 🏊</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LE LIEU ═══════════════ -->
+  <section class="section-cream lieu-section" id="lieu">
+    <div class="container">
+      <p class="eyebrow reveal">Notre lieu de célébration</p>
+      <h2 class="section-heading reveal">Domaine de Canaille, Cassis</h2>
+      <p class="section-sub reveal">
+        Un domaine viticole perché au-dessus de la Méditerranée, avec piscine, terrasses et vue panoramique sur les vignobles et la mer.
+      </p>
+      <div class="video-wrapper reveal">
+        <!-- Replace the src below with the actual Domaine de Canaille video URL -->
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+          <p>Vidéo du domaine — bientôt disponible</p>
+        </div>
+      </div>
+      <a href="https://www.domainedecanaille.com" target="_blank" rel="noopener" class="lieu-link reveal">
+        Découvrir le domaine →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ NOS PROCHES ═══════════════ -->
+  <section class="section-dark team-section" id="team">
+    <div class="container">
+      <p class="eyebrow reveal">Nos Proches &amp; Témoins</p>
+      <h2 class="section-heading reveal" style="color: var(--white);">Les personnes qui comptent</h2>
+      <p class="section-sub reveal" style="margin: 0 auto; color: var(--text-light);">
+        Ceux qui nous accompagnent dans cette belle aventure — notre famille de cœur.
+      </p>
+
+      <!-- Team Joyce -->
+      <h3 class="team-group-title reveal">Team Joyce</h3>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">👩</div>
+          <p class="team-name">Laurence Djian</p>
+          <span class="team-badge">Invitée d'honneur</span>
+          <p class="team-desc">La maman de Joyce — son pilier, sa confidente, sa plus grande fan depuis le premier jour.</p>
+        </div>
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar">👧</div>
+          <p class="team-name">Deborah</p>
+          <span class="team-badge">Témoin</span>
+          <p class="team-desc">La sœur de Joyce — complice de toujours, celle qui la connaît par cœur et qui sera à ses côtés le jour J.</p>
+        </div>
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar">💃</div>
+          <p class="team-name">Salomé</p>
+          <span class="team-badge">Demoiselle d'honneur</span>
+          <p class="team-desc">Amie de Joyce depuis les bancs de Kedge Business School — des fous rires en amphi aux aventures de la vie.</p>
+        </div>
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-avatar">🌸</div>
+          <p class="team-name">Floriane Lodé</p>
+          <span class="team-badge">Demoiselle d'honneur</span>
+          <p class="team-desc">Amie de Joyce depuis Kedge — une amitié forgée entre cours de marketing et soirées mémorables.</p>
+        </div>
+      </div>
+
+      <!-- Team Radvin -->
+      <h3 class="team-group-title reveal">Team Radvin</h3>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">👩‍🦰</div>
+          <p class="team-name">Marie-Hélène</p>
+          <span class="team-badge">Invitée d'honneur</span>
+          <p class="team-desc">Famille de cœur en France — celle qui a accueilli Radvin comme un fils dès son arrivée et ne l'a jamais lâché.</p>
+        </div>
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar">🎩</div>
+          <p class="team-name">Jacques Duverge</p>
+          <span class="team-badge">Invité d'honneur</span>
+          <p class="team-desc">Famille de cœur en France — un mentor, un repère, une figure paternelle qui compte énormément pour Radvin.</p>
+        </div>
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar">🤝</div>
+          <p class="team-name">Abhishek</p>
+          <span class="team-badge">Témoin</span>
+          <p class="team-desc">L'ami de toujours depuis l'Inde — une amitié qui traverse les continents, les fuseaux horaires et les années.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ DRESS CODE ═══════════════ -->
+  <section class="section-light dresscode-section" id="dresscode">
+    <div class="container">
+      <p class="eyebrow reveal">Style &amp; Détails</p>
+      <h2 class="section-heading reveal">Dress Code &amp; Infos Pratiques</h2>
+      <p class="section-sub reveal" style="margin: 0 auto;">
+        Quelques indications pour que chaque moment soit parfait — du vendredi soir au samedi après-midi.
+      </p>
+
+      <div class="dresscode-cards">
+        <div class="dresscode-card reveal reveal-delay-1">
+          <h3>🌙 Vendredi soir — Cérémonie &amp; Soirée</h3>
+          <p>Tenue élégante et festive. Pensez Méditerranée : couleurs chaudes, teintes estivales, matières fluides. Vous allez danser — soyez à l'aise !</p>
+          <div style="margin-top: 1rem;">
+            <p style="font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Couleurs à éviter :</p>
+            <div class="color-swatches">
+              <div class="swatch swatch-white" title="Blanc"></div>
+              <div class="swatch swatch-cream" title="Crème"></div>
+              <div class="swatch swatch-black" title="Noir"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dresscode-card reveal reveal-delay-2">
+          <h3>☀️ Samedi — Brunch &amp; Pool Party</h3>
+          <p>Ambiance décontractée et ensoleillée. Prévoyez votre maillot de bain, une tenue légère et de la crème solaire. La piscine vous attend !</p>
+        </div>
+        <div class="dresscode-card reveal reveal-delay-3">
+          <h3>⏰ Petit rappel</h3>
+          <p>Merci d'arriver environ <strong>1 heure avant</strong> le début de la cérémonie le vendredi — soit vers <strong>17h00</strong>. Cela nous laissera le temps de vous accueillir et de s'installer tranquillement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACCÈS & SÉJOUR ═══════════════ -->
+  <section class="section-dark travel-section" id="travel">
+    <div class="container">
+      <p class="eyebrow reveal">Accès &amp; Séjour</p>
+      <h2 class="section-heading reveal" style="color: var(--white);">Comment venir &amp; où dormir</h2>
+      <p class="section-sub reveal" style="margin: 0 auto; color: var(--text-light);">
+        Cassis est facilement accessible en train ou en voiture. Voici toutes les infos pratiques.
+      </p>
+
+      <div class="travel-grid">
+        <div class="travel-card reveal reveal-delay-1">
+          <div class="card-icon">🚄</div>
+          <h3>En train</h3>
+          <p>TGV jusqu'à la gare de Cassis, puis 13 minutes en voiture jusqu'au domaine. Depuis Paris : environ 3h. Depuis Marseille : environ 30 min.</p>
+        </div>
+        <div class="travel-card reveal reveal-delay-2">
+          <div class="card-icon">🚗</div>
+          <h3>En voiture</h3>
+          <p>Parking disponible directement au Domaine de Canaille. L'accès est fléché depuis le centre de Cassis.</p>
+        </div>
+        <div class="travel-card reveal reveal-delay-3">
+          <div class="card-icon">✈️</div>
+          <h3>En avion</h3>
+          <p>Aéroport de Marseille Provence (MRS) — à 45 min en voiture de Cassis. Liaisons nationales et internationales.</p>
+        </div>
+      </div>
+
+      <div class="text-center reveal">
+        <a href="https://www.google.com/maps/dir//Domaine+de+Canaille,+Cassis" target="_blank" rel="noopener" class="btn-gold">
+          📍 Voir l'itinéraire
+        </a>
+      </div>
+
+      <h3 class="accommodation-title text-center reveal">Hébergement</h3>
+      <div class="travel-grid">
+        <div class="travel-card reveal reveal-delay-1">
+          <div class="card-icon">🏠</div>
+          <h3>Chez Mamouska</h3>
+          <p>À 10 minutes à pied du domaine. L'option la plus proche pour profiter jusqu'au bout de la soirée.</p>
+        </div>
+        <div class="travel-card reveal reveal-delay-2">
+          <div class="card-icon">🏨</div>
+          <h3>Hôtel Liautaud</h3>
+          <p>Situé au port de Cassis, à 18 minutes à pied. Un hôtel charmant avec vue sur le port.</p>
+        </div>
+        <div class="travel-card reveal reveal-delay-3">
+          <div class="card-icon">🏡</div>
+          <h3>Airbnb</h3>
+          <p>De nombreuses options autour de Cassis. Contactez-nous pour des suggestions personnalisées !</p>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrapper reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.5!2d5.5413!3d43.2114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b94b0d2e6b7d%3A0x8e5e3e5e7c9c8b0!2sDomaine%20de%20Canaille!5e0!3m2!1sfr!2sfr!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PLAYLIST ═══════════════ -->
+  <section class="section-cream playlist-section" id="playlist">
+    <div class="container">
+      <p class="eyebrow reveal">Club Canaille</p>
+      <h2 class="section-heading reveal">Notre Playlist</h2>
+      <p class="section-sub reveal">
+        La playlist du Club Canaille — ajoutez vos morceaux préférés pour enflammer la piste et faire vibrer l'after party !
+      </p>
+
+      <div class="spotify-embed reveal">
+        <!-- Replace with actual Spotify playlist embed -->
+        <iframe
+          style="border-radius: 12px;"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXd2GqAMnMWMd?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <a href="https://open.spotify.com/playlist/37i9dQZF1DXd2GqAMnMWMd" target="_blank" rel="noopener" class="btn-spotify reveal">
+        🎵 Ouvrir sur Spotify
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CADEAUX ═══════════════ -->
+  <section class="section-light cadeaux-section" id="cadeaux">
+    <div class="container">
+      <p class="eyebrow reveal">Un geste qui compte</p>
+      <h2 class="section-heading reveal">Voyage de Noces</h2>
+      <p class="section-sub reveal" style="margin: 0 auto;">
+        Votre présence est le plus beau des cadeaux. Mais si vous souhaitez nous gâter…
+      </p>
+
+      <div class="cadeaux-box reveal">
+        <div class="cadeaux-icon">✈️</div>
+        <p>
+          Nous ne souhaitons pas de liste de cadeaux traditionnelle. À la place, si le cœur vous en dit, vous pouvez contribuer à notre voyage de noces — un rêve que nous avons hâte de réaliser ensemble après la célébration.
+        </p>
+        <p style="margin-top: 1rem;">
+          Les détails pour participer seront partagés prochainement. En attendant, sachez que votre présence à Cassis est déjà le plus beau des cadeaux. 💛
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RSVP ═══════════════ -->
+  <section class="section-dark rsvp-section" id="rsvp">
+    <div class="container">
+      <p class="eyebrow reveal">Confirmez votre présence</p>
+      <h2 class="section-heading reveal" style="color: var(--white);">RSVP</h2>
+      <p class="section-sub reveal" style="margin: 0 auto; color: var(--text-light);">
+        Merci de confirmer votre présence avant le <strong style="color: var(--gold);">1er juin 2027</strong> pour nous aider à organiser au mieux ce beau week-end.
+      </p>
+
+      <!-- FormSubmit.co — free, no registration. Replace EMAIL below with Joyce's real email -->
+      <form class="rsvp-form reveal" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_honey" style="display:none">
+        <!-- Disable captcha page -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Success redirect -->
+        <input type="hidden" name="_next" value="">
+        <!-- Subject -->
+        <input type="hidden" name="_subject" value="RSVP — Célébration Joyce & Radvin">
+
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Prénom et nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Nombre de personnes</label>
+          <select id="guests" name="guests" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="1">1 personne</option>
+            <option value="2">2 personnes</option>
+            <option value="3">3 personnes</option>
+            <option value="4">4 personnes</option>
+            <option value="5+">5 ou plus</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="attendance">Présence</label>
+          <select id="attendance" name="attendance" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="both">Vendredi + Samedi</option>
+            <option value="friday">Vendredi seulement</option>
+            <option value="saturday">Samedi seulement</option>
+            <option value="cannot">Je ne pourrai pas venir 😢</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Un petit mot (optionnel)</label>
+          <textarea id="message" name="message" placeholder="Allergies, restrictions alimentaires, ou un message pour les mariés…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Confirmer ma présence</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <p class="footer-names">Joyce &amp; Radvin</p>
+    <p class="footer-meta">3 &amp; 4 Septembre 2027 · Cassis, Sud de la France</p>
+    <p class="footer-heart">♥</p>
+    <p class="footer-bottom">Fait avec amour</p>
+  </footer>
+
+  <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+  <script>
+    // ─── Countdown Timer ───
+    (function() {
+      const target = new Date('2027-09-03T17:00:00+02:00').getTime();
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          document.getElementById('cd-days').textContent = '0';
+          document.getElementById('cd-hours').textContent = '0';
+          document.getElementById('cd-mins').textContent = '0';
+          document.getElementById('cd-secs').textContent = '0';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent = days;
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+
+    // ─── Scroll Reveal ───
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+
+    // ─── Navbar scroll effect ───
+    (function() {
+      const nav = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+      });
+    })();
+
+    // ─── Active nav link ───
+    (function() {
+      const sections = document.querySelectorAll('section[id], header[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => {
+          if (window.scrollY >= sec.offsetTop - 150) {
+            current = sec.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+      });
+    })();
+
+    // ─── Mobile menu ───
+    (function() {
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        links.classList.toggle('open');
+      });
+
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          toggle.classList.remove('open');
+          links.classList.remove('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
